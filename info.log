@@ -1,0 +1,9 @@
+{"message":"Bookmark created with id accb5a03-f661-4011-a7cd-17452f0a599c","level":"info"}
+{"message":"Bookmark created with id 334e77aa-1ddd-4f17-aef0-b2f386af9c99","level":"info"}
+{"message":"Invalid url supplied: com","level":"error"}
+{"message":"Invalid url supplied: .com","level":"error"}
+{"message":"Bookmark created with id a88828aa-122c-478d-8bd2-625e2ae7f74b","level":"info"}
+{"message":"Bookmark with id 334e77aa-1ddd-4f17-aef0- not found.","level":"error"}
+{"message":"Bookmark with id a88828aa-122c-478d-8bd2-625e2ae7f74b deleted.","level":"info"}
+{"message":"Description is required","level":"error"}
+{"message":"Title is required","level":"error"}
