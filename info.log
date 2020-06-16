@@ -7,3 +7,5 @@
 {"message":"Bookmark with id a88828aa-122c-478d-8bd2-625e2ae7f74b deleted.","level":"info"}
 {"message":"Description is required","level":"error"}
 {"message":"Title is required","level":"error"}
+{"message":"Title supplied as empty string","level":"error"}
+{"message":"Title supplied as empty string","level":"error"}

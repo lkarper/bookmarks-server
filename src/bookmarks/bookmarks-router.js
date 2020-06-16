@@ -51,7 +51,7 @@ bookmarksRouter
                 .send('Invalid url supplied')
         }
 
-        if (parseInt(rating) < 0 || parseInt(rating) > 5 || isNaN(parseInt(rating))) {
+        if (parseInt(rating) < 1 || parseInt(rating) > 5 || isNaN(parseInt(rating))) {
             logger.error(`Invalid rating supplied: ${rating}`);
             return res
                 .status(400)
