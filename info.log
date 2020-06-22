@@ -9,3 +9,8 @@
 {"message":"Title is required","level":"error"}
 {"message":"Title supplied as empty string","level":"error"}
 {"message":"Title supplied as empty string","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/435","level":"error"}
+{"message":"Bookmark with id 435 not found.","level":"error"}
+{"message":"Bookmark with id 5 not found.","level":"error"}
