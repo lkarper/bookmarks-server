@@ -38,6 +38,28 @@ const makeBookmarksArray = () => {
     ]
 };
 
+const makeMaliciousBookmark = () => {
+    return {
+        id: 911,
+        title: "Malicious<script>dfasd</script>",
+        url: 'http://google.com',
+        rating: 1,
+        description: `Ipsum laborum cupidatat ad ullamco non consequat minim voluptate in dolor mollit. <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">`
+    }
+}
+
+const makeSanatizedBookmark = () => {
+    return {
+        id: 911,
+        title: "Malicious&lt;script&gt;dfasd&lt;/script&gt;",
+        url: 'http://google.com',
+        rating: 1,
+        description: `Ipsum laborum cupidatat ad ullamco non consequat minim voluptate in dolor mollit. <img src="https://url.to.file.which/does-not.exist">`
+    }
+}
+
 module.exports = {
     makeBookmarksArray,
+    makeMaliciousBookmark,
+    makeSanatizedBookmark,
 }

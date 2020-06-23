@@ -14,3 +14,68 @@
 {"message":"Unauthorized request to path: /bookmarks/435","level":"error"}
 {"message":"Bookmark with id 435 not found.","level":"error"}
 {"message":"Bookmark with id 5 not found.","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/1","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/1","level":"error"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid rating supplied: undefined","level":"error"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark with id undefined deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Invalid rating supplied: four","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Invalid rating supplied: four","level":"error"}
+{"message":"Invalid rating supplied: 0","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Invalid url supplied: mybookmark","level":"error"}
+{"message":"Invalid rating supplied: four","level":"error"}
+{"message":"Invalid rating supplied: 0","level":"error"}
+{"message":"Invalid rating supplied: 10","level":"error"}
+{"message":"Bookmark with id 2 deleted.","level":"info"}
