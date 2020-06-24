@@ -1,9 +1,9 @@
 const path = require('path');
 const express = require('express');
-const { isURL } = require('validator');
 const logger = require('../logger');
 const xss = require('xss');
 const BookmarksService = require('./bookmarks-service');
+const { validateBookmark } = require('./bookmarks-validator');
 
 
 const bookmarksRouter = express.Router();
@@ -41,18 +41,10 @@ bookmarksRouter
             }
         }
 
-        if (!isURL(url)) {
-            logger.error(`Invalid url supplied: ${url}`);
-            return  res.status(400).json({
-                error: { message: `Invalid url supplied` },
-            });
-        }
-
-        if (parseInt(rating) < 1 || parseInt(rating) > 5 || isNaN(parseInt(rating))) {
-            logger.error(`Invalid rating supplied: ${rating}`);
-            return  res.status(400).json({
-                error: { message: `Invalid rating supplied. Rating must be an integer between 1 and 5` },
-            });
+        const error = validateBookmark(newBookmark);
+        
+        if (error) {
+            return res.status(400).json(error);
         }
 
         const bookmarkToPost = {
@@ -112,6 +104,12 @@ bookmarksRouter
                         message: `Request body must contain at least one of 'title', 'url', 'description', or 'rating'`
                     }
                 });
+            }
+
+            const error = validateBookmark(bookmarkToUpdate);
+        
+            if (error) {
+                return res.status(400).json(error);
             }
 
             BookmarksService.updateBookmark(
