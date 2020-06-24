@@ -137,3 +137,17 @@
 {"message":"Invalid rating supplied: four","level":"error"}
 {"message":"Invalid rating supplied: 0","level":"error"}
 {"message":"Invalid rating supplied: 10","level":"error"}
+{"message":"Bookmark with id 1 deleted.","level":"info"}
+{"message":"Bookmark created with id 1","level":"info"}
+{"message":"Bookmark with id 1 deleted.","level":"info"}
+{"message":"Bookmark with id 1 deleted.","level":"info"}
+{"message":"Bookmark created with id 7","level":"info"}
+{"message":"Bookmark with id 7 deleted.","level":"info"}
+{"message":"Bookmark with id 6 deleted.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 5 updated.","level":"info"}
+{"message":"Bookmark with id 3 updated.","level":"info"}
