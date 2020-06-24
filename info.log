@@ -79,3 +79,10 @@
 {"message":"Invalid rating supplied: 0","level":"error"}
 {"message":"Invalid rating supplied: 10","level":"error"}
 {"message":"Bookmark with id 2 deleted.","level":"info"}
+{"message":"Unauthorized request to path: /api/bookmarks/123456","level":"error"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Invalid body object supplied on PATCH: [object Object]","level":"error"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
+{"message":"Invalid body object supplied on PATCH: [object Object]","level":"error"}
+{"message":"Bookmark with id 2 updated.","level":"info"}
