@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const { isURL } = require('validator');
 const logger = require('../logger');
@@ -65,7 +66,7 @@ bookmarksRouter
             .then(bookmark => {
                 res
                     .status(201)
-                    .location(`/bookmarks/${bookmark.id}`)
+                    .location(path.posix.join(req.originalUrl, `${bookmark.id}`))
                     .json(sanatizeBookmark(bookmark));
                 logger.info(`Bookmark created with id ${bookmark.id}`);
             })
@@ -96,6 +97,31 @@ bookmarksRouter
                 .then(() => {
                     res.status(204).end();
                     logger.info(`Bookmark with id ${idToDelete} deleted.`);
+                })
+                .catch(next);
+        })
+        .patch(bodyParser, (req, res, next) => {
+            const { title, url, description, rating } = req.body;
+            const bookmarkToUpdate = {title, url, description, rating };
+
+            const numberOfValues = Object.values(bookmarkToUpdate).filter(Boolean).length;
+            if (numberOfValues === 0) {
+                logger.error(`Invalid body object supplied on PATCH: ${req.body}`);
+                return res.status(400).json({
+                    error: {
+                        message: `Request body must contain at least one of 'title', 'url', 'description', or 'rating'`
+                    }
+                });
+            }
+
+            BookmarksService.updateBookmark(
+                req.app.get('db'),
+                req.params.bookmark_id,
+                bookmarkToUpdate
+            )
+                .then(numRowsAffected => {
+                    res.status(204).end();
+                    logger.info(`Bookmark with id ${req.params.bookmark_id} updated.`);
                 })
                 .catch(next);
         });
