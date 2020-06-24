@@ -5,7 +5,7 @@ const app = require('../src/app');
 const supertest = require('supertest');
 const { makeBookmarksArray, makeMaliciousBookmark, makeSanatizedBookmark } = require('./bookmarks.fixtures');
 
-describe('Bookmarks endpoints', () => {
+describe.only('Bookmarks endpoints', () => {
     let db;
     
     before('make knex instance', () => {
@@ -287,7 +287,7 @@ describe('Bookmarks endpoints', () => {
         });
     });
 
-    describe.only('PATCH /api/bookmarks/:bookmark_id', () => {
+    describe('PATCH /api/bookmarks/:bookmark_id', () => {
         context('Given no bookmarks', () => {
             it('responds with 404', () => {
                 const bookmarkId = 123456;
@@ -369,6 +369,84 @@ describe('Bookmarks endpoints', () => {
                         .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                         .expect(expectedBookmark)
                     );
+            });
+        });
+
+        context('Given incorrectly formed parameters', () => {
+            const testBookmarks = makeBookmarksArray();
+
+            beforeEach('insert bookmarks', () => {
+                return db 
+                    .into('bookmarks')
+                    .insert(testBookmarks);
+            });
+
+            it('responds with 400 and an error message when a bad url is entered', () => {
+                const idToUpdate = 2;
+                const updateBookmark = {
+                    title: 'Bookmarkz, yo',
+                    url: 'mybookmark',
+                    description: 'My dope bookmark',
+                    rating: 4,
+                };
+                return supertest(app)
+                    .patch(`/api/bookmarks/${idToUpdate}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
+                    .send(updateBookmark)
+                    .expect(400, {
+                        error: { message: `Invalid url supplied` },
+                    });
+            });
+
+            it('responds with 400 and an error message when rating is not entered as an integer', () => {
+                const idToUpdate = 2;
+                const updateBookmark = {
+                    title: 'Bookmarkz, yo',
+                    url: 'mybookmark.com',
+                    description: 'My dope bookmark',
+                    rating: 'four',
+                };
+                return supertest(app)
+                    .patch(`/api/bookmarks/${idToUpdate}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
+                    .send(updateBookmark)
+                    .expect(400, {
+                        error: { message: `Invalid rating supplied. Rating must be an integer between 1 and 5` },
+                    });
+            });
+
+            it('responds with 400 and an error message when rating is less than 1', () => {
+                const idToUpdate = 2;
+                const updateBookmark = {
+                    title: 'Bookmarkz, yo',
+                    url: 'mybookmark.com',
+                    description: 'My dope bookmark',
+                    rating: 0,
+                };
+                return supertest(app)
+                    .patch(`/api/bookmarks/${idToUpdate}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
+                    .send(updateBookmark)
+                    .expect(400, {
+                        error: { message: `Invalid rating supplied. Rating must be an integer between 1 and 5` },
+                    });
+            });
+
+            it('responds with 400 and an error message when rating is greater than 5', () => {
+                const idToUpdate = 2;
+                const updateBookmark = {
+                    title: 'Bookmarkz, yo',
+                    url: 'mybookmark.com',
+                    description: 'My dope bookmark',
+                    rating: 10,
+                };
+                return supertest(app)
+                    .patch(`/api/bookmarks/${idToUpdate}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
+                    .send(updateBookmark)
+                    .expect(400, {
+                        error: { message: `Invalid rating supplied. Rating must be an integer between 1 and 5` },
+                    });
             });
         });
     });
