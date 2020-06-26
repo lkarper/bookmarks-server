@@ -20,28 +20,28 @@ bookmarksRouter
             logger.error('Title is required');
             return res 
                 .status(400)
-                .send('Invalid data');
+                .send('Invalid data; request body must include "title", "url", "description", and "rating"');
         }
 
         if (!url) {
             logger.error('URL is required');
             return res 
                 .status(400)
-                .send('Invalid data');
+                .send('Invalid data; request body must include "title", "url", "description", and "rating"');
         }
 
         if (!description) {
             logger.error('Description is required');
             return res 
                 .status(400)
-                .send('Invalid data');
+                .send('Invalid data; request body must include "title", "url", "description", and "rating"');
         }
 
         if (!rating) {
             logger.error('Rating is required');
             return res 
                 .status(400)
-                .send('Invalid data');
+                .send('Invalid data; request body must include "title", "url", "description", and "rating"');
         }
 
         if (!isURL(url)) {

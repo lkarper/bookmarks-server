@@ -9,3 +9,8 @@
 {"message":"Title is required","level":"error"}
 {"message":"Title supplied as empty string","level":"error"}
 {"message":"Title supplied as empty string","level":"error"}
+{"message":"Bookmark with id kij not found.","level":"error"}
+{"message":"URL is required","level":"error"}
+{"message":"Bookmark created with id 5848d820-2701-4622-9209-d2649974e419","level":"info"}
+{"message":"Bookmark with id 5848d820-2701-4622-9209-d2649974e419 deleted.","level":"info"}
+{"message":"Bookmark with id 5848d820-2701-4622-9209-d2649974e419 not found.","level":"error"}
